@@ -12,6 +12,9 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 
+app.use("/auth", require("./routes/auth"));
+app.use("/user", require("./routes/user"));
+
 app.listen(port, console.log(`express app running on port:${port}`));
 
 mongoose.connect(
