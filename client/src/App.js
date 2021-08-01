@@ -1,4 +1,5 @@
 import { Route } from "react-router-dom";
+import axios from "axios";
 
 import "./style.min.css";
 
@@ -10,6 +11,8 @@ import Signin from "./components/auth/Signin";
 import Landing from "./components/routes/Landing";
 import Dashboard from "./components/routes/Dashboard";
 import Admin from "./components/routes/Admin";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

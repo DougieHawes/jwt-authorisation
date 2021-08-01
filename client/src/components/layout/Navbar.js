@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import axios from "axios";
 
 import "./style.min.css";
 
 const Navbar = () => {
+  const signout = async () => {
+    try {
+      await axios.get(`${process.env.REACT_APP_API_URL}/auth/signout`);
+    } catch (err) {
+      console.log("ERROR-" + err.message);
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-logo-box">
@@ -12,15 +21,18 @@ const Navbar = () => {
       </div>
       <div className="navbar-links-box">
         <ul className="navbar-links">
-          <Link activeClassName="selected" to="/dashboard">
+          <NavLink activeClassName="selected" to="/dashboard">
             <li className="navbar-link">dashboard</li>
-          </Link>
-          <Link activeClassName="selected" to="/signin">
+          </NavLink>
+          <li className="navbar-link" onClick={signout}>
+            signout
+          </li>
+          <NavLink activeClassName="selected" to="/signin">
             <li className="navbar-link">signin</li>
-          </Link>
-          <Link activeClassName="selected" to="/signup">
+          </NavLink>
+          <NavLink activeClassName="selected" to="/signup">
             <li className="navbar-link">signup</li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
     </nav>

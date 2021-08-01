@@ -6,7 +6,13 @@
     .navbar-links {
       display: flex;
       .navbar-link {
+        cursor: pointer;
         margin-left: 14px;
+      }
+      .selected {
+        .navbar-link {
+          color: red;
+        }
       }
     }
   }

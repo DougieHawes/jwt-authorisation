@@ -1,1 +1,1 @@
-.navbar{display:flex;justify-content:space-between;padding:6px 2%}.navbar .navbar-links-box .navbar-links{display:flex}.navbar .navbar-links-box .navbar-links .navbar-link{margin-left:14px}
+.navbar{display:flex;justify-content:space-between;padding:6px 2%}.navbar .navbar-links-box .navbar-links{display:flex}.navbar .navbar-links-box .navbar-links .navbar-link{cursor:pointer;margin-left:14px}.navbar .navbar-links-box .navbar-links .selected .navbar-link{color:red}
